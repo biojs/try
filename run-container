@@ -1,0 +1,23 @@
+#!/bin/bash
+expose-fs /root --quiet &
+
+wait_for_fs () {
+  if ! curl -fs localhost:8441 > /dev/null; then
+    sleep 0.2
+    wait_for_fs
+  fi
+}
+
+wait_for_fs
+
+if [ -f /welcome.txt ]; then
+  cat /welcome.txt | format --host "$HOST" --container-id "$CONTAINER_ID" --port "$PORT" > /root/welcome.txt
+  cat /root/welcome.txt
+fi
+
+if [ -f /.bashrc ]; then
+  # in case /root is a volume and .bashrc is stored in /
+  cp /.bashrc /root/.bashrc
+fi
+
+/bin/bash --rcfile /root/.bashrc
