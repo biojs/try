@@ -8,5 +8,5 @@ WORKDIR /root
 ADD welcome.txt /
 ADD run-container /run-container
 ADD .bashrc /root/
-ADD .bashrc /
+ADD .npmrc /root/
 ENTRYPOINT /run-container
