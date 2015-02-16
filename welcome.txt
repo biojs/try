@@ -7,6 +7,10 @@ The address to your server is:
 
   {{host}}
 
+You can browse the output of the biojs sniper here
+
+  try.biojs.net/sniper/{{container-id}}/
+
 When you close this tab this server will shut down.
 
 You can read this again by opening `welcome.txt` at any time.
