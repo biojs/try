@@ -9,7 +9,7 @@ The address to your server is:
 
 You can browse the output of the biojs sniper here
 
-  try.biojs.net/sniper/{{container-id}}/
+  {{host}}/sniper
 
 When you close this tab this server will shut down.
 
